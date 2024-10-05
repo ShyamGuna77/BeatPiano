@@ -1,0 +1,285 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+i,svg {
+    pointer-events: none;
+}
+
+.kick-pad,.snare-pad,.hihat-pad,.tom-pad{
+    width: 4.4rem;
+    height: 4.4rem;
+    margin: 1rem ,0.5rem;
+    cursor: pointer;
+}
+
+.kick-pad{
+   background-color: lightpink;
+    margin: 1rem;
+}
+
+.snare-pad{
+    background-color: #98FB98;
+    margin: 1rem;
+}
+
+.hihat-pad{
+    background: #757f9a;
+    margin: 1rem;
+}
+
+.tom-pad{
+    background: radial-gradient(801px at 4.2% 16.4%, rgba(104, 211, 218, 0.99) 0%, rgb(184, 77, 235) 88.8%);
+    margin: 1rem;
+}
+
+.hihat-pad.active{
+    background: radial-gradient(919px at 1.7% 6.1%, rgb(41, 58, 76) 0%, rgb(40, 171, 226) 100.2%);
+}
+
+.kick-pad.active{
+    background: #ff3ac4;
+}
+
+.snare-pad.active{
+    background-color: #0ea90e;
+}
+.tom-pad.active{
+    background: radial-gradient(801px at 4.2% 16.4%, rgba(7, 135, 145, 0.99) 0%, rgb(184, 77, 235) 88.8%);
+}
+
+.kick-track{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+    width:80%;
+}
+
+
+.hihat-track,.snare-track,.tom-track{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+    width:80%;
+}
+
+.hihat,.tom,.kick,.snare{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sequencer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.controls{
+    display: flex;
+    align-items: center;
+    flex: 1rem;
+    justify-content: space-between;
+    margin: 0rem 2rem;
+}
+
+.controls button{
+    padding: 0.5rem;
+    background-color: black;
+    color: whitesmoke;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    font-size: 1rem;
+}
+
+.pad{
+    transition: all 0.5s ease;
+}
+
+.play{
+    padding: 1rem 2rem;
+    font-size: 16px;
+    background-color: #0e0e10;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 1.6rem;
+    border-radius: 30px;
+    margin-bottom: 1rem;
+   
+}
+
+.mute.active{
+    background-color: grey;
+}
+
+
+select{
+    columns: black;
+    border-radius: 2px solid black;
+}
+
+option{
+    background-color: #000617;
+    color: whitesmoke;
+}
+
+
+.tempo{
+    margin:1rem;
+    width:30%;
+}
+.tempo-slider{
+    padding: 0.2rem;
+    -webkit-appearance: none;
+    margin: 0.2rem 0rem;
+    width: 100%;
+    position: relative;
+    background: rgb(88,88,88);
+    cursor: pointer;
+    border-radius: 1rem;
+}
+
+.tempo p{
+    text-align: center;
+    font-size: 15px;
+    margin-top: 0.3rem;
+}
+@keyframes playTrack{
+    from{
+        transform:scale(1)
+    }to{
+        transform: scale(1.2);
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .kick-pad, .snare-pad, .hihat-pad, .tom-pad {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin: 0.4rem;
+    }
+
+    .kick-track, .hihat-track, .snare-track, .tom-track {
+        flex-direction: column;
+        margin-top: 1.2rem;
+        width: 90%;
+    }
+
+    .controls {
+        flex-direction: column;
+        margin: 1rem 0;
+        width: 70%;
+    }
+
+    .controls button {
+        width: 10%;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+
+    .play {
+        width: 20%;
+        padding: 0.8rem;
+        font-size: 14px;
+    }
+
+    select {
+        width: 90%;
+    }
+
+    .tempo {
+        width: 50%;
+        margin: 1rem auto;
+    }
+}
+
+/* Responsive for extra-small screens (narrow iPhones, Android) */
+@media (max-width: 480px) {
+    .kick-pad, .snare-pad, .hihat-pad, .tom-pad {
+        width: 2rem;
+        height: 2rem;
+        margin: 0.3rem;
+    }
+
+    .kick-track, .hihat-track, .snare-track, .tom-track {
+        margin-top: 1rem;
+    }
+
+    .controls button {
+        font-size: 0.9rem;
+        padding: 0.3rem;
+    }
+
+    .play {
+        padding: 0.6rem 1.5rem;
+        font-size: 13px;
+    }
+
+    .tempo-slider {
+        padding: 0.1rem;
+    }
+}
+
+/* @media(max-width: 1024px) {
+    .kick-pad, .snare-pad, .hihat-pad, .tom-pad {
+        width: 4rem;
+        height: 4rem;
+        margin: 0.8rem;
+    }
+
+    .kick-track, .hihat-track, .snare-track, .tom-track {
+        margin-top: 1.5rem;
+        width: 90%;
+    }
+
+    .controls {
+        margin: 0rem 1rem;
+        width: 100%;
+    }
+
+    .controls button {
+        padding: 0.3rem 0.2rem;
+        font-size: 1.1rem;
+        width: 40%;
+        margin:1rem;
+    }
+
+    .play {
+        padding: 1rem 2.5rem;
+        font-size: 18px;
+        margin-top: 1.8rem;
+    }
+
+    select {
+        padding: 0rem;
+        font-size: 16px;
+    }
+
+    .tempo {
+        max-width: 350px;
+        margin: 1.2rem;
+    }
+
+    .tempo-slider {
+        padding: 0.3rem;
+        margin: 0.3rem 0;
+    }
+
+    .tempo p {
+        font-size: 16px;
+    }
+} */
